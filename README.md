@@ -6,10 +6,11 @@ Start every Freigeist website repo from this template. It comes with a staging s
 
 1. On this repo, press **Use this template** → **Create a new repository**.
    - Owner: **Freigeist-Agency**.
-   - Name: end it in `Site` (e.g. `MuellerSite`). The org rule that protects `main` matches `*Site`.
+   - Name: end it in `Site` (e.g. `MuellerSite`).
    - Tick **Include all branches**. Otherwise the new repo gets no `main` and can't publish.
-2. Push your first change to `staging`. The `staging-deploy` workflow creates the Cloudflare Pages project and puts the site on `https://staging.<repo name in lower case>.pages.dev`.
-3. When it's ready for prod: Settings → Pages → Deploy from a branch → `main` / root. Add a `CNAME` file and set up DNS if it has its own domain.
+2. Protect `main`: Settings → Rules → Rulesets → New ruleset → **Import a ruleset** → pick `.github/rulesets/main.json` from this repo (download it first) → Create. `main` then only changes through a pull request. (GitHub's free org plan has no org-wide rulesets, so this is per repo.)
+3. Push your first change to `staging`. The `staging-deploy` workflow creates the Cloudflare Pages project and uploads the site. The staging link is in the workflow run's summary. It's `https://staging.<repo name in lower case>.pages.dev`, unless Cloudflare already has a project with that name anywhere, in which case it adds a short suffix (e.g. `staging.site-template-d0l.pages.dev`).
+4. When it's ready for prod: Settings → Pages → Deploy from a branch → `main` / root. Add a `CNAME` file and set up DNS if it has its own domain.
 
 ## Day to day
 
