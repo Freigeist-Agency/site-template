@@ -21,3 +21,4 @@ Start every Freigeist website repo from this template. It comes with a staging s
 - Not uploaded to staging: `tests/`, `docs/`, `tools/`, `scripts/`, dotfiles and this README.
 
 The Cloudflare token is the org secret `CLOUDFLARE_API_TOKEN`, so there's nothing to set up per repo.
+
