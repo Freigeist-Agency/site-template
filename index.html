@@ -2,6 +2,10 @@
 <html lang="de">
 <head>
   <meta charset="utf-8">
+  <script>/* clean address: GitHub Pages serves page.html at /page too, so an old /page.html or /index.html link
+     shows /page or / in the address bar (no reload). Keep this first in <head> on every page. */
+    if (/\.html$/.test(location.pathname)) history.replaceState(history.state, '', location.pathname.replace(/(^|\/)index\.html$/, '$1').replace(/\.html$/, '') + location.search + location.hash);
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>New site</title>
   <link rel="stylesheet" href="css/site.css">
@@ -9,7 +13,7 @@
 <body>
   <main>
     <h1>New site</h1>
-    <p>Replace this page. Use relative paths so the site runs on staging and prod alike.</p>
+    <p>Replace this page. Use relative paths so the site runs on staging and prod alike, and link to pages without .html (<code>impressum</code>, <code>./</code> for this page).</p>
   </main>
 </body>
 </html>
