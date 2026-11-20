@@ -2,6 +2,9 @@
 <html lang="de">
 <head>
   <meta charset="utf-8">
+  <script>/* /page/ is not a page here, /page is: drop the trailing slash before showing "not found" */
+    if (/.\/$/.test(location.pathname)) location.replace(location.pathname.replace(/\/+$/, '') + location.search + location.hash);
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Seite nicht gefunden</title>
   <link rel="stylesheet" href="/css/site.css">
